@@ -94,7 +94,7 @@ header img{
     width: 98.5vw;
     height: 100vh;
     z-index: -10;
-    background-color:rgb(57, 58, 58);
+    background-color:rgb(47, 92, 76);
     clip-path: polygon(74% 0%,101% 0%,100% 20%,101% 101%,89% 101%,58% 101%,76% 49%,58% 0%);
 }
 
@@ -179,7 +179,7 @@ header img{
 }
 
 #about{
-    background-color: rgb(80, 82, 82);
+    background-color: rgb(58, 62, 82);
     width: 100%;
     clip-path: polygon(0 0,100% 0% ,100% 90%, 80% 80%, 0% 90% );
     height: 100vh;
@@ -233,7 +233,7 @@ header img{
 }
 #about>div:nth-child(2)>a:hover{
     color: #ffffff;
-    background: rgb(75, 77, 77);
+    background: rgb(75, 100, 75);
     border: solid white 3px;
 }
 
@@ -289,7 +289,7 @@ header img{
 }
 .calendar{
     width:80%;
-    background-color: #10151a;
+    background-color: #374554;
     padding: 40px;
     border-radius:10px ;
     color:#ECE9E6
@@ -325,7 +325,7 @@ header img{
 
 .project-card{
     height: auto;
-    background-color: rgb(155, 161, 161);
+    background-color: rgb(29, 79, 79);
     padding: 20px;
     border-radius: 10px;
     display: flex;
@@ -372,7 +372,7 @@ header img{
 
 .project-card>div:nth-child(2) a:hover{
     color: #ffffff;
-    background: rgb(76, 78, 78);
+    background: rgb(17, 198, 198);
     border: white solid 3px;
 }
 
@@ -875,6 +875,79 @@ header img{
         margin-top: 5px;
     }
 }
+/* ////////////////// */
+body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        #container {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #ece6e6;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s;
+            margin-bottom: 50px;
+        }
+
+        #title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        #name-label, #email-label, #message-label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        #name, #email, #message {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+
+        #message {
+            resize: vertical;
+        }
+
+        #submit-button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        #submit-button:hover {
+            background-color: #0056b3;
+        }
+
+        #success-message {
+            color: green;
+            text-align: center;
+            margin-top: 10px;
+            animation: fadeIn 1s;
+            display: none;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
 </style>
 <body>
 
@@ -887,7 +960,7 @@ header img{
       <li><a href="#about" class="nav-link about section">About</a></li>
       <li><a href="#skills-sec" class="nav-link skills">Skills</a></li>
       <li><a href="#projects-sec" class="nav-link projects">Projects</a></li>
-      <li><a href="#contact" class="nav-link contact">Contact</a></li>
+      <li><a href="#contactForm" class="nav-link contact">Contact</a></li>
       <li> <button onclick="resume()" style="border:none; background-color: white;" id="resume-button-1" >
         <a href="./Jatin-Lalit-Resume.pdf" target="_blank" class="nav-link resume" id="resume-link-1" download>Resume</a>
       </button>
@@ -938,7 +1011,7 @@ header img{
         <div>
           <h1>About Me</h1>
           <p id="user-detail-intro">Greetings! I'm Jatin, a flexible full stack web developer. My passion lies in crafting captivating user interfaces and implementing powerful back-end functionalities to create immersive web experiences. Proficient in HTML, CSS, JavaScript, and a variety of frameworks, I transform ideas into exceptional solutions that go above and beyond.</p>
-          <a href="#contact">Contact Me</a>
+          <a href="#contactForm">Contact Me</a>
         </div>
       </section>
 
@@ -1081,34 +1154,40 @@ header img{
 
 
 
-     <section id="contact" class="contact-section tag">
-      <h2 class="section-title">Contact</h2>
-      <div>
-             <div id="contact-link" class="contact-link">
-                  
-                    <div>
-                           <a target="_blank" id="contact-github"
-                                  href="https://github.com/Jatin-Lalit"><img
-                                         src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
-                                         alt=""><span>Github</span></a>
-                           <a target="_blank" id="contact-linkedin"
-                                  href="https://www.linkedin.com/in/jatin-lalit-a4aa50236"><img
-                                         src="https://www.iconpacks.net/icons/1/free-linkedin-icon-112-thumb.png"
-                                         alt=""><span>LinkedIn</span></a>
-                           <a target="_blank" id="contact-phone" href="tel:+919667042351"><img
-                                         src="https://cdn-icons-png.flaticon.com/512/220/220802.png" alt=""><span>+91
-                                         9667042351</span></a>
-                            <a target="_blank" id="contact-phone" href="tel:+919667042351"><img
-                                            src="https://static.vecteezy.com/system/resources/previews/010/829/986/original/phone-icon-in-trendy-flat-style-free-png.png" alt=""><span>+91
-                                            9667042351</span></a>
-                           <a target="_blank" id="contact-email"
-                                  href="mailto:jatinlalit010@gmail.com"><img
-                                         src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-email-512.png"
-                                         alt=""><span>jatinlalit010@gmail.comm</span></a>
-                    </div>
-             </div>
+<!-- <section id="contact" class="contact-section tag">
+    <h2 class="section-title">Contact</h2>
+    <div>
+      <div id="contact-link" class="contact-link"> -->
+        <!-- Your form goes here -->
+        <div id="container">
+            <h1 id="title">Contact Us</h1>
+            <form id="contactForm">
+                <div class="input-group">
+                    <label for="name" id="name-label">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="input-group">
+                    <label for="email" id="email-label">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="message" id="message-label">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" id="submit-button">Submit</button>
+            </form>
+            <div class="success-message" id="successMessage"></div>
+        </div>
+        </div>
+        <!-- End of your form -->
+        <div>
+          <!-- Add other contact links as needed -->
+        <!-- </div>
       </div>
-</section>
+    </div>
+  </section> -->
+  
+  
 
 <script>
 
@@ -1145,6 +1224,42 @@ function resume(){
     window.open("https://drive.google.com/file/d/1JJx4LQoJO7-Do-3kHu0kJunAqkRGPEQx/view?usp=sharing")
 }
 
+
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    let name = document.getElementById("name");
+    let email = document.getElementById("email");
+    let message = document.getElementById("message");
+  
+    const formData = {
+      name: name.value,
+      email: email.value,
+      message: message.value
+    };
+  
+    const url = "https://formlanding.onrender.com/post";
+  
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.msg === "true") {
+        alert("Thank you for contacting us!\n We will try to connect you as soon as possible");
+      } else {
+        alert("An error occurred. Please try again later.");
+      }
+    })
+    .catch(error => {
+      alert("An error occurred. ");
+      console.error("Error:", error);
+    });
+  });
 
 </script>
 
