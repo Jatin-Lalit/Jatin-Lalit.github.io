@@ -948,6 +948,148 @@ body {
                 opacity: 1;
             }
         }
+
+
+
+
+
+
+        /* /////////// */
+        /* Add this CSS to your stylesheet */
+/* Base styles for larger screens */
+/* Center the contact form */
+/* Center the contact form */
+
+/* Style the contact section */
+.contact {
+  background-color: #fff;
+  padding: 50px 0;
+  text-align: center;
+}
+
+/* Style the heading */
+.heading {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.heading i {
+  margin-right: 10px;
+}
+
+/* Style the container */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Style the content */
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start; /* Change to flex-start */
+}
+
+/* Style the image box */
+.image-box {
+  flex: 1;
+  padding: 20px;
+}
+
+.image-box img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Style the form */
+form#contactForm {
+  flex: 1;
+  max-width: 500px;
+  text-align: left;
+}
+
+/* Style form fields and icons */
+.field {
+  position: relative;
+  /* margin-bottom: 20px; */
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.field i {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #333;
+}
+
+/* Style the submit button */
+.button-area {
+  text-align: center;
+}
+
+#submit-button {
+  background-color: #333;
+  color: #fff;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+#submit-button:hover {
+  background-color: #555;
+}
+
+/* Add some spacing to the form elements */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .image-box {
+    margin-top: 20px;
+    flex: none;
+  }
+}
+@media (max-width: 900px) {
+  .contact {
+    min-height: 70vh;
+  }
+  .contact .container {
+    margin: 3rem 0 2rem 0;
+  }
+  .contact .container .content {
+    padding: 18px 12px;
+  }
+  .contact .content .image-box {
+    display: none;
+  }
+  .contact .content form {
+    width: 100%;
+    margin-right: 2rem;
+  }
+}
+
+
 </style>
 <body>
 
@@ -1159,7 +1301,7 @@ body {
     <div>
       <div id="contact-link" class="contact-link"> -->
         <!-- Your form goes here -->
-        <div id="container">
+        <!-- <div id="container">
             <h1 id="title">Connect With Me</h1>
             <form id="contactForm">
                 <div class="input-group">
@@ -1177,18 +1319,47 @@ body {
                 <button type="submit" id="submit-button">Submit</button>
             </form>
             <div class="success-message" id="successMessage"></div>
-        </div>
-        </div>
+            </div>
+        </div> -->
         <!-- End of your form -->
-        <div>
-          <!-- Add other contact links as needed -->
-        <!-- </div>
-      </div>
-    </div>
-  </section> -->
-  
-  
 
+        <!-- //////////////////////// -->
+        <section class="contact" id="contact">
+            <h2 class="heading"><i class="fas fa-headset"></i> Get in <span>Touch</span></h2>
+            <div class="container">
+              <div class="content">
+                <div class="image-box">
+                  <img     draggable="true" src="./connect-form-image.jpeg" alt="">
+                </div>
+                <form id="contactForm" name="submit-to-google-sheet">
+                  <div class="form-group">
+                    <div class="field">
+                      <input type="text" name="name" id="name" placeholder="Name" required>
+                     
+                    </div>
+                    <i class="fas fa-user"></i>
+                    <div class="field">
+                      <input type="email" name="email" id="email" placeholder="Email" required>
+                      
+                    </div>
+                    <i class="fas fa-envelope"></i>
+                    <div class="message">
+                      <textarea placeholder="Message" name="message" id="message" required></textarea>
+                      <i class="fas fa-comment-dots"></i>
+                    </div>
+                  </div>
+                  <div class="button-area">
+                    <button id="submit-button" type="submit">
+                      Submit <i class="fa fa-paper-plane"></i>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </section>
+          
+  
+          <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
 
 
@@ -1250,14 +1421,16 @@ document.getElementById("contactForm").addEventListener("submit", function(event
     .then(response => response.json())
     .then(data => {
       if (data.msg === "true") {
-        alert("Thank you for contacting us!\n We will try to connect you as soon as possible");
+        Swal.fire('Thank you for contacting us!, I will try to connect you as soon as possible')
+
+        // alert("Thank you for contacting us!, I will try to connect you as soon as possible");
       } else {
-        alert("An error occurred. Please try again later.");
+        Swal.fire("An error occurred. Please try again later.");
       }
     })
     .catch(error => {
       alert("An error occurred. ");
-      console.error("Error:", error);
+      
     });
   });
 
