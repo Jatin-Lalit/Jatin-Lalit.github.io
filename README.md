@@ -16,9 +16,7 @@ Feel free to navigate through the directories to view individual projects. Contr
 
 For inquiries or collaborations, feel free to reach out using my Portfolio website.
 ![](https://imagetolink.com/ib/Ub2P07N1PT.png)
-<p align="center">
-  <img src="https://imagetolink.com/ib/Ub2P07N1PT.png" width="300" />
-</p>
+
 
 Thank you for visiting and exploring my portfolio!
 
