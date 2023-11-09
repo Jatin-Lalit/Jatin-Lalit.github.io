@@ -6,10 +6,9 @@ Welcome to my digital portfolio on GitHub! This repository is a collection of my
 
 This repository serves as a platform to display my work, allowing you to explore the code, projects, and structure of my portfolio website.
 
+## Access My Portfolio
 
-## How to Use
-
-Feel free to navigate through the directories to view individual projects. Contributions, feedback, and collaborations are always welcome!
+Explore my portfolio here: [Click Me](https://jatin-lalit.github.io)
 
 ## Contact
 
