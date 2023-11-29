@@ -1277,8 +1277,26 @@ textarea {
           </div>
         </div>
      </div>
-
-     
+///////////////////////
+     <div class="project-card">
+        <div>
+          <img src="https://imagetolink.com/ib/vMpyQ7fo9u.png" alt="">
+        </div>
+        <div>
+          <h1 class="project-title" >Email Styler Pro<br>(Chrome Extension)<br></h1>
+          <p class="project-description">EmailStylerPro is an AI-powered Chrome Extension that generates stylish and awesome-looking emails for professionals and small businesses, allowing you to stand out above other boring-looking emails.</p>
+          <h5  class="project-tech-stack" >Features: AI-Generated Email Design | Direct Email Sending | Small Business Marketing Tool
+             | Bulk Email Capability | User-Friendly Interface </h5>
+          <h5  class="project-tech-stack" >Tech Stack: HTML | CSS | JavaScript | Node.js | Express | OpenAi </h5>
+          <p>Individual project </p>
+          <div>
+            <a href="https://chromewebstore.google.com/detail/email-styler-pro/kngaokmkbhhiebflgciikcjnhlehppnh?hl=en-US&utm_source=ext_sidebar" target="_blank" class="project-deployed-link">Live &nbsp;<i class="fa-solid fa-arrow-up-right-from-square fa-sm"></i></a>
+            <a id="can-not-share-code" target="_blank" class="project-github-link" >Code &nbsp;<i
+              class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+     </div>
+/////////////////////////////////
 
    
     </section>
@@ -1475,6 +1493,10 @@ document.getElementById("contactForm").addEventListener("submit", function(event
       
     });
   });
+document.getElementById("can-not-share-code").addEventListener("click",()=>{
+     Swal.fire('Can Not Share Code With Unknowns')
+
+})
 
 </script>
 
