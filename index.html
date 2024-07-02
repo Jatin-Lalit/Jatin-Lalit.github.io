@@ -1092,6 +1092,111 @@ textarea {
     margin-right: 2rem;
   }
 }
+/* Default styles */
+
+/* General Styles */
+#experience {
+    margin-top: 2em;
+}
+
+#experience > h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: rgb(36, 36, 36);
+    margin-bottom: 30px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: rgb(36, 36, 36);
+    margin-bottom: 30px;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 0.5em;
+}
+
+.experience-entry {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 2em;
+    padding: 20px;
+    background-color: rgba(58, 92, 92, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.company-logo img {
+    border-radius: 5px;
+    max-width: 100px;
+    margin-right: 20px;
+}
+
+.experience-details {
+    flex: 1;
+    color: white;
+}
+
+.experience-entry h3 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: #4CAF50;
+}
+
+.experience-entry .designation {
+    font-size: 1.2rem;
+    color: #bbb;
+    margin-bottom: 10px;
+}
+
+.experience-entry .designation span {
+    font-weight: normal;
+    font-size: 0.9rem;
+    color: #999;
+}
+
+.experience-entry .summary {
+    margin: 1em 0;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.responsibilities {
+    margin-bottom: 1em;
+    padding-left: 20px;
+}
+
+.responsibilities li {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.experience-entry .technologies {
+    font-size: 1rem;
+    margin-top: 1em;
+}
+
+/* Divider Style */
+.experience-entry + .experience-entry {
+    border-top: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Media Queries */
+@media only screen and (max-width: 768px) {
+    .experience-entry {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .company-logo img {
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+
 
 
 </style>
@@ -1104,6 +1209,7 @@ textarea {
     <ul id="nav-menu" class="navbar">
       <li><a href="#" class="active nav-link home">Home</a></li>
       <li><a href="#about" class="nav-link about section">About</a></li>
+      <li><a href="#experience" class="nav-link about experience">Work Experience</a></li>
       <li><a href="#skills-sec" class="nav-link skills">Skills</a></li>
       <li><a href="#projects-sec" class="nav-link projects">Projects</a></li>
       <li><a href="#contactForm" class="nav-link contact">Contact</a></li>
@@ -1160,7 +1266,43 @@ textarea {
           <a href="#contactForm">Contact Me</a>
         </div>
       </section>
-
+      
+      <section id="experience">
+        <h1>Work Experience</h1>
+        <div class="experience-entry">
+            <div class="company-logo">
+                <img src="cointab-logo.png" alt="Cointab Logo">
+            </div>
+            <div class="experience-details">
+                <h3>Cointab</h3>
+                <p class="designation">Software Development Engineer L1<span>(March 2024 - June 2024)</span></p>
+                <p class="summary">Responsible for feature development and bug fixing, ensuring high-quality software delivery.</p>
+                <ul class="responsibilities">
+                    <li>Managed feature development and bug fixing.</li>
+                    <li>Collaborated with cross-functional teams to implement new features.</li>
+                    <li>Maintained and optimized code for performance and reliability.</li>
+                    <li>Performed manual testing to ensure high-quality software delivery.</li>
+                </ul>
+                <p class="details">
+                    <strong>Technologies used:</strong> Node.js, Express.js, JavaScript, MySQL, AngularJS, GitHub, and more.
+                </p>
+                <div class="additional-details">
+                    <h4>New Features Developed:</h4>
+                    <ol>
+                        <li>Developed several new features for the reconciliation product.</li>
+                        <li>Notably developed the "backup group recon" feature, which:</li>
+                        <ul>
+                            <li>Allows clients to create a backup of their old data.</li>
+                            <li>Enables clients to group their old data.</li>
+                            <li>Creates a backup sent to their email.</li>
+                            <li>Deletes the selected old data from the database, freeing up space for reuse.</li>
+                        </ul>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+    
 
 
 
@@ -1331,7 +1473,7 @@ textarea {
 
     <!-- ***************************************************************************************************** -->
 
-
+ 
 
     <section id="github-sec">
         <div class="github react-activity-calendar">
