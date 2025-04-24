@@ -32,18 +32,21 @@
     overflow-x: hidden;
   }
   
-  /* ===== HEADER ===== */
   header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 1.5rem 2rem;
+    padding: 1rem 2rem;
     background-color: var(--light);
     box-shadow: var(--box-shadow);
     z-index: 1000;
     border-bottom: 3px solid #000;
     animation: slideDown 0.5s ease-out;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px; /* Set specific height for header */
   }
   
   @keyframes slideDown {
@@ -74,9 +77,9 @@
     display: flex;
     list-style: none;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end; /* Align to right */
     gap: 1.5rem;
-    margin-top: 0;
+    margin: 0;
   }
   
   .navbar li a {
@@ -141,15 +144,16 @@
     text-decoration: none;
   }
   
-  /* ===== HOME SECTION ===== */
   #home {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 8rem 2rem 5rem;
+    padding: 8rem 2rem 5rem; 
     position: relative;
     background-color: var(--light);
+    margin-top: 60px; /* Adjust margin-top for mobile */
+    padding-top: 4rem;
   }
   
   .home-bg {
@@ -960,7 +964,8 @@
   
   @media (max-width: 768px) {
     header {
-      padding: 1rem;
+      padding: 0.8rem 1rem;
+      height: auto; /* Allow height to adjust on mobile */
     }
     
     .navbar {
@@ -971,13 +976,15 @@
       background-color: var(--light);
       border-top: 3px solid black;
       flex-direction: column;
-      padding: 2rem 0;
+      padding: 1.5rem 0;
       clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
       transition: var(--transition);
+      z-index: 1000; /* Ensure dropdown is above content */
     }
     
     .navbar.active {
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
     }
     
     #menu-icon {
@@ -1004,7 +1011,7 @@
     }
     
     .all-projects {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr; /* Single column for small screens */
     }
     
     .content {
@@ -1351,3 +1358,211 @@
       text-decoration: underline;
     }
   }
+  /* Fix navbar overlapping intro content */
+#home {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 2rem 5rem; /* Increased top padding to prevent navbar overlap */
+  position: relative;
+  background-color: var(--light);
+  margin-top: 80px; /* Add margin to prevent overlap with fixed header */
+}
+
+/* Fix header height and positioning */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: var(--light);
+  box-shadow: var(--box-shadow);
+  z-index: 1000;
+  border-bottom: 3px solid #000;
+  animation: slideDown 0.5s ease-out;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px; /* Set specific height for header */
+}
+
+/* Fix navbar display */
+.navbar {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: flex-end; /* Align to right */
+  gap: 1.5rem;
+  margin: 0;
+}
+
+/* Improve responsive design for navbar */
+@media (max-width: 768px) {
+  header {
+    padding: 0.8rem 1rem;
+    height: auto; /* Allow height to adjust on mobile */
+  }
+  
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--light);
+    border-top: 3px solid black;
+    flex-direction: column;
+    padding: 1.5rem 0;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: var(--transition);
+    z-index: 1000; /* Ensure dropdown is above content */
+  }
+  
+  .navbar.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  #home {
+    margin-top: 60px; /* Adjust margin-top for mobile */
+    padding-top: 4rem;
+  }
+}
+
+/* Fix project cards responsive layout */
+@media (max-width: 576px) {
+  .all-projects {
+    grid-template-columns: 1fr; /* Single column for small screens */
+  }
+  
+  .project-card {
+    max-width: 100%;
+  }
+}
+
+/* Fix skills grid for smaller screens */
+@media (max-width: 480px) {
+  .container.grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for very small screens */
+    gap: 1rem;
+  }
+  
+  .skill-item {
+    padding: 1rem;
+  }
+  
+  .skills-card-img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .home-text h1 {
+    font-size: 2rem; /* Smaller font for mobile */
+    margin-bottom: 0.3rem;
+  }
+  
+  .home-text .node {
+    font-size: 1.2rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+}
+
+/* Enhance experience section responsiveness */
+@media (max-width: 768px) {
+  .experience-entry {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+  
+  .company-logo {
+    margin-bottom: 1rem;
+  }
+  
+  .experience-details h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Fix about section responsiveness */
+@media (max-width: 1024px) {
+  .about-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .about-image {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .about-content {
+    text-align: center;
+  }
+  
+  .about-content h1::after {
+    left: 25%;
+    width: 50%;
+  }
+}
+
+/* Make sure navbar button is visible and clickable on mobile */
+#menu-icon {
+  display: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  background-color: var(--light);
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  z-index: 1010; /* Ensure it's above other elements */
+}
+
+@media (max-width: 768px) {
+  #menu-icon {
+    display: block;
+  }
+  
+  header .logo h2 {
+    font-size: 1.5rem; /* Slightly smaller logo on mobile */
+  }
+}
+
+/* Adjust form elements for better mobile experience */
+@media (max-width: 480px) {
+  .field input,
+  .message textarea {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+  
+  #submit-button {
+    width: 100%;
+    padding: 0.7rem;
+  }
+  
+  .contact-info a {
+    font-size: 0.9rem;
+  }
+}
+
+/* Improve footer responsiveness */
+footer {
+  padding: 1.5rem;
+  font-size: 0.9rem;
+}
+
+/* Ensure scrollbar doesn't cause layout shifts */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+}
+
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
