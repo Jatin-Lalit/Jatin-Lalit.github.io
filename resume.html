@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jatin Lalit - Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.3;
+            color: #333;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .resume-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .resume-grid {
+            display: grid;
+            grid-template-columns: 35% 65%;
+            height: 100%;
+        }
+
+        /* Left Sidebar */
+        .sidebar {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 20px 18px;
+        }
+
+        .profile-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-img {
+            width: 105px;
+            height: 105px;
+            border-radius: 50%;
+            border: 3px solid rgba(255,255,255,0.2);
+            margin-bottom: 12px;
+            object-fit: cover;
+        }
+
+        .name {
+            font-size: 25px;
+            font-weight: 800;
+            margin-bottom: 5px;
+            color: white;
+        }
+
+        .title {
+            font-size: 13.5px;
+            font-weight: 400;
+            color: #00d4ff;
+            margin-bottom: 18px;
+        }
+
+        .contact-info {
+            margin-bottom: 18px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 10.5px;
+        }
+
+        .contact-item .icon {
+            width: 20px;
+            min-width: 20px;
+            font-size: 14px;
+            margin-right: 10px;
+            display: inline-block;
+            text-align: center;
+            color: #00d4ff;
+            filter: grayscale(100%);
+        }
+
+        .contact-text {
+            color: white;
+            line-height: 1.4;
+            flex: 1;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .contact-text a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .sidebar-section {
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #00d4ff;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .section-title .icon {
+            font-size: 14px;
+            color: #00d4ff;
+        }
+
+        .education-item {
+            margin-bottom: 14px;
+        }
+
+        .education-title {
+            font-weight: 600;
+            font-size: 11.5px;
+            margin-bottom: 3px;
+        }
+
+        .education-institution {
+            font-size: 10.5px;
+            color: #00d4ff;
+            margin-bottom: 3px;
+        }
+
+        .education-date {
+            font-size: 9.5px;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .skills-list {
+            font-size: 10.5px;
+            line-height: 1.7;
+        }
+
+        .soft-skills-list {
+            list-style: none;
+        }
+
+        .soft-skills-list li {
+            font-size: 10.5px;
+            margin-bottom: 8px;
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .soft-skills-list li:before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #00d4ff;
+        }
+
+        .interests-list {
+            font-size: 10.5px;
+            line-height: 1.7;
+        }
+
+        .certificate-item {
+            margin-bottom: 12px;
+        }
+
+        .certificate-title {
+            font-weight: 600;
+            font-size: 12px;
+            margin-bottom: 2px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .certificate-org {
+            font-size: 10px;
+            color: #00d4ff;
+            margin-bottom: 4px;
+        }
+
+        .certificate-desc {
+            font-size: 9px;
+            color: rgba(255,255,255,0.8);
+            line-height: 1.4;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 20px 22px;
+        }
+
+        .main-section {
+            margin-bottom: 15px;
+        }
+
+        .main-section-title {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 2.5px solid #00d4ff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .main-section-title .icon {
+            font-size: 16px;
+            color: #00d4ff;
+        }
+
+        .summary-text {
+            font-size: 10.5px;
+            line-height: 1.45;
+            color: #555;
+            text-align: justify;
+        }
+
+        .experience-item {
+            margin-bottom: 12px;
+        }
+
+        .experience-header {
+            margin-bottom: 8px;
+        }
+
+        .company-name {
+            font-size: 15px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 2px;
+        }
+
+        .job-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: #00d4ff;
+            margin-bottom: 2px;
+        }
+
+        .job-date {
+            font-size: 11px;
+            color: #777;
+            margin-bottom: 8px;
+        }
+
+        .job-responsibilities-title {
+            font-size: 11px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 6px;
+        }
+
+        .job-responsibilities {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .job-responsibilities li {
+            font-size: 11px;
+            color: #555;
+            margin-bottom: 5px;
+            padding-left: 18px;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .job-responsibilities li:before {
+            content: "•";
+            position: absolute;
+            left: 5px;
+            color: #00d4ff;
+            font-weight: bold;
+        }
+
+        .project-item {
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .project-item:last-child {
+            border-bottom: none;
+        }
+
+        .project-header {
+            margin-bottom: 6px;
+        }
+
+        .project-name {
+            font-size: 14px;
+            font-weight: 700;
+            color: #2c3e50;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .project-link {
+            color: #00d4ff;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        .project-tech {
+            font-size: 11px;
+            color: #777;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .project-details {
+            list-style: none;
+        }
+
+        .project-details li {
+            font-size: 11px;
+            color: #555;
+            margin-bottom: 5px;
+            padding-left: 20px;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .project-details li:before {
+            content: "•";
+            position: absolute;
+            left: 5px;
+            color: #00d4ff;
+            font-weight: bold;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                margin: 0;
+                padding: 0;
+            }
+
+            .resume-container {
+                margin: 0;
+                box-shadow: none;
+                max-width: 100%;
+            }
+
+            .resume-grid {
+                min-height: 100%;
+                height: 100%;
+            }
+
+            .project-link {
+                color: #0066cc;
+            }
+
+            a {
+                text-decoration: none;
+            }
+
+            @page {
+                margin: 0;
+                size: A4;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <div class="resume-grid">
+            <!-- Left Sidebar -->
+            <div class="sidebar">
+                <div class="profile-section">
+                    <img src="./jatin.jpg" alt="Jatin Lalit" class="profile-img">
+                    <h1 class="name">Jatin Lalit</h1>
+                    <p class="title">Node JS Developer</p>
+                </div>
+
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="icon">☎</span>
+                        <div class="contact-text">+91 9667042351</div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon">✉</span>
+                        <div class="contact-text">jatinlalit010@gmail.com</div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon">📍</span>
+                        <div class="contact-text">New Delhi</div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon">🌐</span>
+                        <div class="contact-text"><a href="https://jatin-lalit.github.io">jatin-lalit.github.io</a></div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon">in</span>
+                        <div class="contact-text">jatin-lalit-a4aa50236</div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon">⚡</span>
+                        <div class="contact-text">Jatin-Lalit</div>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h2 class="section-title"><span class="icon">◆</span> EDUCATION</h2>
+                    <div class="education-item">
+                        <div class="education-title">Full Stack Web Development</div>
+                        <div class="education-institution">Masai School</div>
+                        <div class="education-date">July 2022 - November 2023</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="education-title">BCA</div>
+                        <div class="education-institution">IGNOU</div>
+                        <div class="education-date">June 2024 - June 2027</div>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h2 class="section-title"><span class="icon">◆</span> TECHNICAL SKILLS</h2>
+                    <div class="skills-list">
+                        Node.js | RESTful APIs | MongoDB | Express.js | Git | JavaScript | MySQL | Docker
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h2 class="section-title"><span class="icon">◆</span> SOFT SKILLS</h2>
+                    <ul class="soft-skills-list">
+                        <li>Critical Thinking</li>
+                        <li>Teamwork</li>
+                        <li>Adaptability</li>
+                        <li>Problem Solving</li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-section">
+                    <h2 class="section-title"><span class="icon">◆</span> INTERESTS</h2>
+                    <div class="interests-list">
+                        Music | Exploring | Classical Music
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Main Content -->
+            <div class="main-content">
+                <div class="main-section">
+                    <h2 class="main-section-title"><span class="icon">▸</span> PROFESSIONAL SUMMARY</h2>
+                    <p class="summary-text">
+                        Software developer with a passion for space exploration, specializing in AI-driven solutions and real-time communication systems. Currently developing AI chatbots, voice call systems, and automation tools at Polar AI using Node.js, Express, LangChain, and OpenAI technologies. Successfully launched and maintain live production applications including AI Voice Assistant, FormPilot, and CountdownShare, serving real users daily. Proven expertise in building scalable SaaS products from scratch with payment integrations and delivering innovative solutions that enhance productivity.
+                    </p>
+                </div>
+
+                <div class="main-section">
+                    <h2 class="main-section-title"><span class="icon">▸</span> WORK EXPERIENCE</h2>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="company-name">Polar AI</div>
+                            <div class="job-title">Full Stack Web Developer</div>
+                            <div class="job-date">September 2024 - present</div>
+                        </div>
+                        <div class="job-responsibilities-title">Job responsibilities:</div>
+                        <ul class="job-responsibilities">
+                            <li>At Polar AI, worked on optimizing AI-driven chatbots for web and email platforms. Used technologies like Node.js, Express, LangChain, Pinecone, and OpenAI embeddings. Played a key role in transitioning the product to a SaaS model and training new team members.</li>
+                            <li>Developed the AI call system from scratch for inbound and outbound real-time communication, enabling seamless voice interactions.</li>
+                            <li>Converted a custom product to a SaaS model, enabling clients to start using the service and contact the team for customizations.</li>
+                            <li>Built web chat, email chatbots, and AI agent automation from scratch as part of the SaaS offering.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="company-name">Cointab</div>
+                            <div class="job-title">Software Development Engineer</div>
+                            <div class="job-date">March 2024 - June 2024</div>
+                        </div>
+                        <div class="job-responsibilities-title">Job responsibilities:</div>
+                        <ul class="job-responsibilities">
+                            <li>Managed feature development and bug fixing, ensuring high code quality and product reliability.</li>
+                            <li>Collaborated closely with cross-functional teams to implement new features effectively.</li>
+                            <li>Conducted thorough manual testing to deliver stable products and ensure seamless user experiences.</li>
+                            <li>Resolved bugs efficiently, contributing to improved system performance and customer satisfaction.</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="main-section">
+                    <h2 class="main-section-title"><span class="icon">▸</span> PROJECTS</h2>
+
+                    <div class="project-item">
+                        <div class="project-header">
+                            <div class="project-name">
+                                1. AI Voice Assistant |
+                                <a href="https://www.aivoiceassistant.in/" target="_blank" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i> Live
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-tech">JavaScript | Node.js | Express.js | RazorPay | Chrome Extension</div>
+                        <ul class="project-details">
+                            <li>Developed a voice-activated AI assistant for instant answers without leaving browser tab, perfect for interviews, exams, coding, and productivity.</li>
+                            <li>Implemented voice-to-text AI, screen reading mode, and web search integration for lightning-fast responses.</li>
+                            <li>Built customizable keyboard shortcuts and multi-device support for seamless user experience.</li>
+                            <li>Integrated AI models to provide 200+ free AI calls with no credit card required, ensuring privacy-focused design.</li>
+                            <li>Optimized real-time performance to help developers, students, and professionals improve their productivity daily.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
